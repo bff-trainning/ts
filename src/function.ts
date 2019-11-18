@@ -46,7 +46,7 @@ Add4(2,2,2,2,2,2,2);
 
 
 
-//Typescript异步编程
+//Typescript异步编程  Callback->Promise-> async/await
 //回调地狱
 function loadJson(url:string,args:any, cb:(data:string)=>void,errcb:(error:Error)=>void){
     
@@ -78,13 +78,44 @@ function render(cb:(data:string)=>void,errcb:(err:Error)=>void){
 
 
 
+//异步函数
+//Promise 
+let p = new Promise((resolve,reject)=>{
+    try{
+    resolve("success");
+    }
+    catch(err){
+    reject("error")
+    }
+
+});
+
+p.then(res=>{
+    console.log(res);
+})
+.catch(error=>{
+    console.log(error)
+})
 
 
+//
+function asyncOperation(n:number):Promise<number>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => resolve(n), 1000);
+    });
+}
+
+function foo1(arg1: Promise<number>):Promise<number> {
+    let n1_lifted;
+    return arg1
+        .then(/* 匿名函数1 */ n1 => { n1_lifted = n1; return asyncOperation(n1) })
+        .then(/* 匿名函数2 */ n2 => 100 / n2);
+}
 
 
-
-
-
-
-
-
+async function foo2(arg1: Promise<number>):Promise<number> {
+    const n1 = await arg1;
+    const n2 = await asyncOperation(n1);
+    // foo2内没有嵌套的scope, 你仍然可以在这里使用n1
+    return n2;
+}
