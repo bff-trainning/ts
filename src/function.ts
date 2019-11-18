@@ -119,3 +119,5 @@ async function foo2(arg1: Promise<number>):Promise<number> {
     // foo2内没有嵌套的scope, 你仍然可以在这里使用n1
     return n2;
 }
+
+
