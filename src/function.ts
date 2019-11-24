@@ -6,6 +6,7 @@ function greetName(name:string):string{
 var greetName2 = (name:string)=>{
     return name;
 }
+
 let greetName3 : (name:string)=> string;
 greetName3 = greetName;
 
