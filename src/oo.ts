@@ -1,3 +1,5 @@
+
+
 //面向对象的一些基本特征： 封装 继承 多态
 
 class Animal {
@@ -10,13 +12,16 @@ class Animal {
   }
 }
 
-let a = new Animal("dog");
-
+//类继承父类必须重写父类的构函数
 class Dog extends Animal {
   constructor(name: string) {
     super(name);
   }
 }
+
+let a = new Animal("dog");
+
+
 
 //多态的表现形式 重载 重写 抽象类 接口
 abstract class Human {
@@ -30,6 +35,7 @@ interface IProgramer {
   codding(): void;
 }
 
+//完整的一个类的实例
 class Programer extends Human implements IProgramer {
   constructor(name: string) {
     super(name);
@@ -48,7 +54,7 @@ class Programer extends Human implements IProgramer {
     console.log("eat finish");
   }
 
-  codding(): void {
+  codding(): never{
     throw new Error("Method not implemented.");
   }
 }

@@ -2,6 +2,8 @@ let x: number;
 x = 10;
 console.log(x);
 
+
+
 //基本数局类型
 /**
  * boolean
@@ -18,18 +20,18 @@ console.log(x);
  */
 
 
-
-
-
 //number
-let n1: number = 100;
 let f1: number = 100.8;
+let decLiteral: number = 6;
+let hexLiteral: number = 0xf00d;
+let binaryLiteral: number = 0b1010;
+let octalLiteral: number = 0o744;
+
 
 //boolean
 let flag: boolean = true || false;
 
 //string
-
 let s: string = '123';
 let s2: string = "123";
 let s3: string = `123${4}`;
@@ -49,6 +51,8 @@ let arr1_1 = arr1[0];
 let t: [string, number, boolean] = ["小明", 100, true];
 let t_1 = t[0];
 
+
+
 //枚举enum
 enum Color {
   Red,
@@ -67,6 +71,8 @@ enum Code{
 }
 
 //any不做类型检查
+
+
 
 //void
 function hello(): void {

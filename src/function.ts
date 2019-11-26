@@ -17,7 +17,7 @@ let greetName4 = (name:string,f:(name:string)=> string)=>{
 greetName4("小明",greetName3)
 
 
-
+//函数的传值方式
 
 //可选参数
 let Add = (f1:number,f2:number,f3?:number):number=>{
@@ -32,6 +32,7 @@ let Add = (f1:number,f2:number,f3?:number):number=>{
 let Add2 = (f1:number,f2:number,f3:number = 100):number=>{
     return f1+f2+f3;
 }
+
 Add2(10,20);
 //
 let Add3 = (f1:number,f2:number,f3:number = 100):number=>{
@@ -88,7 +89,6 @@ let p = new Promise((resolve,reject)=>{
     catch(err){
     reject("error")
     }
-
 });
 
 p.then(res=>{
