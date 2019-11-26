@@ -3,6 +3,23 @@ x = 10;
 console.log(x);
 
 //基本数局类型
+/**
+ * boolean
+ * number
+ * string
+ * array
+ * tuple
+ * enum
+ * any
+ * null undefined
+ * void
+ * never
+
+ */
+
+
+
+
 
 //number
 let n1: number = 100;
@@ -12,12 +29,16 @@ let f1: number = 100.8;
 let flag: boolean = true || false;
 
 //string
-let s: string = "123";
+
+let s: string = '123';
 let s2: string = "123";
 let s3: string = `123${4}`;
 let s4: string = `sss
-Before trying anything else you want to make sure your paths that you are using in your launch configuration are correct.
+Before trying anything  else you want to make sure your paths that you are using in your launch configuration are correct.
 `;
+
+let s5 = new String('sss');
+
 
 //Array
 let arr1: number[] = [1, 2, 3];
@@ -38,14 +59,48 @@ enum Color {
 let c: Color = Color.Blue;
 console.log(Color.Black); //输出4
 
+//常用
+enum Code{   
+  NOTLOGIN=4001,
+  NOTFIND=4002,
+  SERVERERROR=5000
+}
+
+//any不做类型检查
+
 //void
 function hello(): void {
   alert("hello World");
 }
 
+var uf:undefined;
+console.log(uf); //undefined
+
 //null
 let sss = null;
-let arr: any = ["s", 2, true];
+
+
+//never类型代表永不存在的值的类型，它只能被赋值为never。
+// 返回 never 的函数必须有无法被执行到的终止点
+function error(message: string): never {
+  throw new Error(message);
+}
+
+// 推断的返回值是 never
+function fail() {
+  return error("一些东西失败了");
+}
+
+// 返回 never 的函数必须有无法被执行到的终止点
+function infiniteLoop(): never {
+  while (true) {
+  }
+}
+
+
+
+
+
 
 
 //多类型参数
