@@ -16,6 +16,7 @@ console.log(x);
  * null undefined
  * void
  * never
+ * 
 
  */
 
@@ -44,11 +45,11 @@ let s5 = new String('sss');
 
 //Array
 let arr1: number[] = [1, 2, 3];
-let arr2: Array<number> = [1, 2];
+let arr2: Array<any> = [1, ""];
 let arr1_1 = arr1[0];
 
 //Tuple 元组
-let t: [string, number, boolean] = ["小明", 100, true];
+let t: [string,number, boolean,number] = ["小明", 100, true,100];
 let t_1 = t[0];
 
 
@@ -79,7 +80,8 @@ function hello(): void {
   alert("hello World");
 }
 
-var uf:undefined;
+var uf;
+uf = null;
 console.log(uf); //undefined
 
 //null
@@ -135,9 +137,10 @@ for(let v of ["s","ss"]){
 
 }
 
-for(let index in ["s","ss"]){
-
+for(let index in [1,"ss"]){
+  
 }
+
 
 //do while
 var i:number = 0;

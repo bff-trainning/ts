@@ -14,6 +14,7 @@ greetName3 = greetName;
 let greetName4 = (name:string,f:(name:string)=> string)=>{
     f(name);
 }
+
 greetName4("小明",greetName3)
 
 
@@ -23,10 +24,11 @@ greetName4("小明",greetName3)
 let Add = (f1:number,f2:number,f3?:number):number=>{
     let result = f1+f2;
     if(f3!==undefined){
-        result+=f3
+        result+=f3;
     }
     return result;
 }
+
 
 //默认参数
 let Add2 = (f1:number,f2:number,f3:number = 100):number=>{
@@ -41,7 +43,7 @@ let Add3 = (f1:number,f2:number,f3:number = 100):number=>{
 
 //剩余参数
 let Add4 = (...f3s:number[])=>{
-
+    console.log(f3s[0]);
 }
 
 Add4(2,2,2,2,2,2,2);
@@ -87,7 +89,7 @@ let p = new Promise((resolve,reject)=>{
     resolve("success");
     }
     catch(err){
-    reject("error")
+    reject(err)
     }
 });
 
@@ -115,8 +117,12 @@ function foo1(arg1: Promise<number>):Promise<number> {
 
 
 async function foo2(arg1: Promise<number>):Promise<number> {
+
     const n1 = await arg1;
     const n2 = await asyncOperation(n1);
+
+    var [a,b] = await Promise.all([arg1,asyncOperation(1)]);
+
     // foo2内没有嵌套的scope, 你仍然可以在这里使用n1
     return n2;
 }

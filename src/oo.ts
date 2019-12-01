@@ -1,9 +1,7 @@
 
-
 //面向对象的一些基本特征： 封装 继承 多态
-
 class Animal {
-  name: string;
+  public name: string;
   constructor(name: string) {
     this.name = name;
   }
@@ -17,6 +15,7 @@ class Dog extends Animal {
   constructor(name: string) {
     super(name);
   }
+
 }
 
 let a = new Animal("dog");
@@ -37,6 +36,7 @@ interface IProgramer {
 
 //完整的一个类的实例
 class Programer extends Human implements IProgramer {
+
   constructor(name: string) {
     super(name);
   }
@@ -54,7 +54,7 @@ class Programer extends Human implements IProgramer {
     console.log("eat finish");
   }
 
-  codding(): never{
+  codding(): void{
     throw new Error("Method not implemented.");
   }
 }
