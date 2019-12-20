@@ -52,7 +52,7 @@ Typescript 官网： http://www.typescriptlang.org/
 	}
 }
 ```
- `mkdir src .vscode && touch src/main.ts`
+ `mkdir src && mkdir .vscode && touch src/main.ts`
 
 
 
